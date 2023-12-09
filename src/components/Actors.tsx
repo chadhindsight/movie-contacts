@@ -1,6 +1,9 @@
 import React from 'react';
+import Actor, { ActorInterface } from './Actor';
 
-const Actors = () => {
+type ActorsList = ActorInterface[];
+
+const Actors = ({ actors }: { actors: ActorsList }): React.ReactNode => {
     return (
         <table>
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -17,7 +20,13 @@ const Actors = () => {
                 </tr>
             </thead>
             <tbody>
-                {/* Actor component will be rendered here */}
+                {
+                    /* Actor component will be rendered here */
+                    actors.map((actor) => {
+                        return <Actor {...actor} />
+                    })
+                }
+
             </tbody>
         </table>
     );
