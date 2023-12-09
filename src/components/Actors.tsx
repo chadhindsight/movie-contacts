@@ -4,6 +4,7 @@ import Actor, { ActorInterface } from './Actor';
 type ActorsList = ActorInterface[];
 
 const Actors = ({ actors }: { actors: ActorsList }): React.ReactNode => {
+
     return (
         <table>
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -21,8 +22,8 @@ const Actors = ({ actors }: { actors: ActorsList }): React.ReactNode => {
             </thead>
             <tbody>
                 {
-                    /* Actor component will be rendered here */
-                    actors.map((actor) => {
+                    /* Only render the first 5 actors from the list for better UI experiences */
+                    actors.slice(0, 5).map((actor) => {
                         return <Actor {...actor} />
                     })
                 }
