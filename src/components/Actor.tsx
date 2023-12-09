@@ -1,5 +1,5 @@
 
-interface ActorInterface {
+export interface ActorInterface {
     name: string;
     pictureUrl: string;
     popularity: number;
