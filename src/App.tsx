@@ -2,12 +2,13 @@ import React from 'react'
 import './App.css'
 import { ContactsContext } from './main'
 import Actors from './components/Actors'
+import Header from './components/Header'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-3xl font-bold underline'>Movie Contacts</h1>
+      <Header />
       <ContactsContext.Consumer>
         {(actors) => <Actors actors={actors} />}
       </ContactsContext.Consumer>
