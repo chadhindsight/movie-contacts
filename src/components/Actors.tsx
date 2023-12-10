@@ -3,7 +3,7 @@ import Actor, { ActorInterface } from './Actor';
 
 type ActorsList = ActorInterface[];
 
-const Actors = ({ actors }: { actors: ActorsList }): React.ReactNode => {
+const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
 
     return (
         <table>
