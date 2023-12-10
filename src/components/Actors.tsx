@@ -8,11 +8,11 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
 
     useEffect(() => {
         setVisibleActors(actors.slice(0, 5))
-    }, []);
+    }, [actors]);
 
     const deleteActor = (id: string) => {
-        const updatedList = [...actors].filter(actor => actor.id !== id)
-        setVisibleActors(updatedList)
+        // Update visibleActors based on the current state
+        setVisibleActors(prevActors => prevActors.filter(actor => actor.id !== id));
     }
     return (
         <table>
