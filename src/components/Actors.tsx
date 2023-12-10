@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Actor, { ActorInterface } from './Actor';
 
 type ActorsList = ActorInterface[];
 
 const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
+    const [visibleActors, setVisibleActors] = useState<ActorsList>([]);
+
+    useEffect(() => {
+        setVisibleActors(actors.slice(0, 5))
+    }, []);
 
     return (
         <table>
@@ -23,7 +28,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
             <tbody>
                 {
                     /* Only render the first 5 actors from the list for better UI experiences */
-                    actors.slice(0, 5).map((actor) => {
+                    visibleActors.map((actor) => {
                         return <Actor {...actor} />
                     })
                 }
