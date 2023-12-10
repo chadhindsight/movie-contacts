@@ -10,6 +10,10 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
         setVisibleActors(actors.slice(0, 5))
     }, []);
 
+    const deleteActor = (id: string) => {
+        const updatedList = [...actors].filter(actor => actor.id !== id)
+        setVisibleActors(updatedList)
+    }
     return (
         <table>
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -29,7 +33,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                 {
                     /* Only render the first 5 actors from the list for better UI experiences */
                     visibleActors.map((actor) => {
-                        return <Actor {...actor} />
+                        return <Actor {...actor} deleteActor={() => deleteActor(actor.id)} />
                     })
                 }
 
