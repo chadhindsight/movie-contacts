@@ -18,9 +18,10 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
 
     const getRandomActorFromList = () => {
         // Select random contact and put it to the start of contact list!
-        const randoNum = Math.floor(Math.random() * remainingActors.length)
-        const randomActor = remainingActors[randoNum]
-        visibleActors.unshift(randomActor)
+        const randoNum = Math.floor(Math.random() * remainingActors.length);
+        const randomActor = remainingActors[randoNum];
+        console.log('checking', randomActor);
+        setVisibleActors(prevActors => [randomActor, ...prevActors]);
         // Update list of remaining contacts
         setRemainingActors([...remainingActors].splice(randoNum, randoNum + 1))
     }
@@ -49,7 +50,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                         {
                             /* Only render the first 5 actors from the list for better UI experiences */
                             visibleActors.map((actor) => {
-                                return <Actor {...actor} deleteActor={() => deleteActor(actor.id)} />
+                                return <Actor key={actor.id} {...actor} deleteActor={() => deleteActor(actor.id)} />
                             })
                         }
 
