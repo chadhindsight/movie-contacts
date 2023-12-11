@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { ContactsContext } from './main'
 import Actors from './components/Actors'
-import Header from './components/Header/Header'
+import Header from './components/Header'
 
 function App() {
 
