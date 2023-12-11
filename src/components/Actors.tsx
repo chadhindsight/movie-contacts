@@ -17,14 +17,20 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     }
 
     const getRandomActorFromList = () => {
-        // Select random contact and put it to the start of contact list!
-        const randoNum = Math.floor(Math.random() * remainingActors.length);
-        const randomActor = remainingActors[randoNum];
-        console.log('checking', randomActor);
-        setVisibleActors(prevActors => [randomActor, ...prevActors]);
-        // Update list of remaining contacts
-        setRemainingActors([...remainingActors].splice(randoNum, randoNum + 1))
-    }
+        if (remainingActors.length === 0) {
+            // If all actors are added, reset the remaining actors to the original list
+            setRemainingActors(actors);
+        } else {
+            // Select random actor and put it at the start of the visibleActors list
+            const randomIndex = Math.floor(Math.random() * remainingActors.length);
+            const randomActor = remainingActors[randomIndex];
+
+            // Update list of remaining actors and visible actors
+            setRemainingActors(prevRemainingActors => prevRemainingActors.filter((actor, index) => index !== randomIndex));
+            setVisibleActors(prevVisibleActors => [randomActor, ...prevVisibleActors]);
+        }
+    };
+
     return (
         <>
             {visibleActors.length ? (
