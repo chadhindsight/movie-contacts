@@ -5,6 +5,7 @@ type ActorsList = ActorInterface[];
 
 const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     const [visibleActors, setVisibleActors] = useState<ActorsList>([]);
+    const [remainingActors, setRemainingActors] = useState(actors)
 
     useEffect(() => {
         setVisibleActors(actors.slice(0, 5))
@@ -13,6 +14,15 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     const deleteActor = (id: string) => {
         // Update visibleActors based on the current state
         setVisibleActors(prevActors => prevActors.filter(actor => actor.id !== id));
+    }
+
+    const getRandomActorFromList = () => {
+        // Select random contact and put it to the start of contact list!
+        const randoNum = Math.floor(Math.random() * remainingActors.length)
+        const randomActor = remainingActors[randoNum]
+        visibleActors.unshift(randomActor)
+        // Update list of remaining contacts
+        setRemainingActors([...remainingActors].splice(randoNum, randoNum + 1))
     }
     return (
         <>
@@ -29,6 +39,9 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Action
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                <button onClick={() => getRandomActorFromList()}>Add Random Actor</button>
                             </th>
                         </tr>
                     </thead>
