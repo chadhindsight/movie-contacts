@@ -62,6 +62,9 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                             <th scope="col" className="px-6 py-3">
                                 <button onClick={() => sortByName()}>Sort By Name</button>
                             </th>
+                            <th scope="col" className="px-6 py-3">
+                                <button>Sort By Renown</button>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
