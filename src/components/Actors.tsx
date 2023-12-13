@@ -40,6 +40,10 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
 
     }
 
+    const sortByRenown = () => {
+
+    }
+
     return (
         <>
             {visibleActors.length ? (
