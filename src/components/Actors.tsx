@@ -60,7 +60,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                                 <button onClick={() => getRandomActorFromList()}>Add Random Actor</button>
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                <button onClick={() => sortByName()}>Add Random Actor</button>
+                                <button onClick={() => sortByName()}>Sort By Name</button>
                             </th>
                         </tr>
                     </thead>
