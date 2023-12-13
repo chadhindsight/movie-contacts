@@ -24,7 +24,10 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
             // Select random actor and put it at the start of the visibleActors list
             const randomIndex = Math.floor(Math.random() * remainingActors.length);
             const randomActor = remainingActors[randomIndex];
-
+            // if visibleActors already has the randomActor in it, do not add random actor
+            if (visibleActors.includes(randomActor)) {
+                return
+            }
             // Update list of remaining actors and visible actors
             setRemainingActors(prevRemainingActors => prevRemainingActors.filter((actor, index) => index !== randomIndex));
             setVisibleActors(prevVisibleActors => [randomActor, ...prevVisibleActors]);
