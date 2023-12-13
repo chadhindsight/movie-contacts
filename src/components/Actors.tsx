@@ -34,6 +34,12 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
         }
     };
 
+    const sortByName = () => {
+        const updatedList = [...visibleActors].sort((a, b) => a.name.localeCompare(b.name))
+        setVisibleActors(updatedList)
+
+    }
+
     return (
         <>
             {visibleActors.length ? (
@@ -52,6 +58,9 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 <button onClick={() => getRandomActorFromList()}>Add Random Actor</button>
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                <button onClick={() => sortByName()}>Add Random Actor</button>
                             </th>
                         </tr>
                     </thead>
