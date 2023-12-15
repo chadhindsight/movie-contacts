@@ -41,7 +41,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     }
 
     const sortByRenown = () => {
-        const sortedList = [...visibleActors].sort((actor1, actor2) => actor1.popularity - actor2.popularity);
+        const sortedList = [...visibleActors].sort((actor1, actor2) => actor2.popularity - actor1.popularity);
         setVisibleActors(sortedList)
     }
 
