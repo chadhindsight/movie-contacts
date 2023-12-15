@@ -40,7 +40,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
 
     }
 
-    const sortByRenown = () => {
+    const sortByPopularity = () => {
         const sortedList = [...visibleActors].sort((actor1, actor2) => actor2.popularity - actor1.popularity);
         setVisibleActors(sortedList)
     }
@@ -68,7 +68,7 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                                 <button onClick={() => sortByName()}>Sort By Name</button>
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                <button onClick={() => sortByRenown()}>Sort By Renown</button>
+                                <button onClick={() => sortByPopularity()}>Sort By Renown</button>
                             </th>
                         </tr>
                     </thead>
