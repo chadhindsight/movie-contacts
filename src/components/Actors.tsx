@@ -35,9 +35,14 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     };
 
     const sortByName = () => {
-        const updatedList = [...visibleActors].sort((a, b) => a.name.localeCompare(b.name))
+        const updatedList = [...visibleActors].sort((actor1, actor2) => actor1.name.localeCompare(actor2.name));
         setVisibleActors(updatedList)
 
+    }
+
+    const sortByPopularity = () => {
+        const sortedList = [...visibleActors].sort((actor1, actor2) => actor2.popularity - actor1.popularity);
+        setVisibleActors(sortedList)
     }
 
     return (
@@ -61,6 +66,9 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 <button onClick={() => sortByName()}>Sort By Name</button>
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                <button onClick={() => sortByPopularity()}>Sort By Popularity</button>
                             </th>
                         </tr>
                     </thead>
