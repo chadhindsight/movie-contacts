@@ -35,13 +35,13 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     };
 
     const sortByName = () => {
-        const updatedList = [...visibleActors].sort((a, b) => a.name.localeCompare(b.name))
+        const updatedList = [...visibleActors].sort((actor1, actor2) => actor1.name.localeCompare(actor2.name));
         setVisibleActors(updatedList)
 
     }
 
     const sortByRenown = () => {
-
+        const sortedList = [...visibleActors].sort((actor1, actor2) => actor1.popularity - actor2.popularity);
     }
 
     return (
