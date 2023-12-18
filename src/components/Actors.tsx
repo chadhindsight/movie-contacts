@@ -12,7 +12,6 @@ const Actors: React.FC<{ actors: ActorsList }> = ({ actors }) => {
     }, [actors]);
 
     const deleteActor = (id: string) => {
-        // Update visibleActors based on the current state
         setVisibleActors(prevActors => prevActors.filter(actor => actor.id !== id));
     }
 
