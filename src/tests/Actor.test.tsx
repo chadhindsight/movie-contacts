@@ -4,5 +4,7 @@ import Actor from '../components/Actor';
 
 
 describe('Actors component', () => {
+    it('renders a component that displays info for an actor', () => {
 
+    })
 }
