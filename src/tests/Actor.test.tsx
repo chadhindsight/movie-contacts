@@ -4,7 +4,7 @@ import Actor from '../components/Actor';
 
 
 describe('Actors component', () => {
-    // mock actor info 
+    // Mock actor info to be passed to the realted Actor component
     const idrisTest = {
         "name": "Idris Elba",
         "pictureUrl": "https://image.tmdb.org/t/p/w500/d9NkfCwczP0TjgrjpF94jF67SK8.jpg",
@@ -13,5 +13,10 @@ describe('Actors component', () => {
     }
 
     it('renders a component that displays info for an actor', () => {
+        const { getByText, getByAltText } = render(<Actor {...idrisTest} />);
+
+        // Check if the actor's name is rendered
+        expect(getByText(idrisTest.name)).toBeTruthy();
+        expect(getByText(idrisTest.popularity.toString())).toBeTruthy();
     })
 })
