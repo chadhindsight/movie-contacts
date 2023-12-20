@@ -19,7 +19,7 @@ describe('Actors component', () => {
         expect(getByText(idrisTest.name)).toBeTruthy();
         expect(getByText(idrisTest.popularity.toString())).toBeTruthy();
         expect(getByAltText(idrisTest.name)).toBeTruthy();
-
+        // The Delete button
         expect(getByText('Delete Actor')).toBeTruthy();
     })
 })
