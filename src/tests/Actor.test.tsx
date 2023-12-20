@@ -15,8 +15,11 @@ describe('Actors component', () => {
     it('renders a component that displays info for an actor', () => {
         const { getByText, getByAltText } = render(<Actor {...idrisTest} />);
 
-        // Check if the actor's name is rendered
+        // Check if the actor's name, popularity, etc are rendered
         expect(getByText(idrisTest.name)).toBeTruthy();
         expect(getByText(idrisTest.popularity.toString())).toBeTruthy();
+        expect(getByAltText(idrisTest.name)).toBeTruthy();
+
+        expect(getByText('Delete Actor')).toBeTruthy();
     })
 })
