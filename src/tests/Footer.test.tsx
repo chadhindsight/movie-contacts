@@ -7,8 +7,7 @@ describe('Footer component', () => {
         const { getByText } = render(<Footer />);
 
         // Check if the copyright text is rendered
-        expect(screen.getByText(/© 2023 Chadhindsight™\. All Rights Reserved\./i)).toBeTruthy();
-        // Check if the link is rendered and has the correct href attribute
+        expect(screen.getByText('© 2023 Chadhindsight™. All Rights Reserved.')).toBeTruthy();        // Check if the link is rendered and has the correct href attribute
         const link = getByText('Chadhindsight™');
         expect(link).toBeTruthy();
         const linkElement = link.closest('a');
