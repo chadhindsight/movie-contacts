@@ -18,10 +18,8 @@ describe('Footer component', () => {
             expect(link).toBeTruthy();
             const linkElement = link.closest('a');
 
-            // Check if the link element is not null
             expect(linkElement).toBeTruthy();
 
-            // Check the href attribute
             const hrefAttribute = linkElement?.getAttribute('href');
             expect(hrefAttribute).toBe('https://chadhindsight.github.io');
         }
