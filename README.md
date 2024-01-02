@@ -1,6 +1,18 @@
 # Movie Contacts
 
-# React + TypeScript + Vite
+## Description
+
+This project is an SPA that allows users to view a list of actors and their related information from a basic database.
+
+## How it works
+
+Users can filter the list of actors based on certain criteria such as average popularity, sort the list in alphabetical order, and add a new entry to the list of actors displayed.
+
+# Under the hood
+
+This project was built using Vite. See the following sections to learn more.
+
+**React + TypeScript + Vite**
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
