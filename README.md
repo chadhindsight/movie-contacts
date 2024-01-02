@@ -1,4 +1,23 @@
-# React + TypeScript + Vite
+# Movie Contacts
+
+## Description
+
+This project is an SPA that allows users to view a list of actors and their related information from a basic database.
+
+## How it works
+
+Users can filter the list of actors based on certain criteria such as average popularity, sort the list in alphabetical order, and add a new entry to the list of actors displayed.
+<img width="1436" alt="Screenshot 2024-01-02 at 2 43 59 PM" src="https://github.com/chadhindsight/movie-contacts/assets/16522246/ceff166a-3696-4733-af0a-a02725327b55">
+
+
+https://github.com/chadhindsight/movie-contacts/assets/16522246/41142db6-2725-492e-9d04-afa4743d62d0
+
+
+## Under the hood
+
+This project was built using Vite. See the following sections to learn more.
+
+**React + TypeScript + Vite**
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -7,7 +26,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+**Expanding the ESLint configuration**
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
@@ -17,12 +36,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
