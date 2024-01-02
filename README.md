@@ -7,6 +7,11 @@ This project is an SPA that allows users to view a list of actors and their rela
 ## How it works
 
 Users can filter the list of actors based on certain criteria such as average popularity, sort the list in alphabetical order, and add a new entry to the list of actors displayed.
+<img width="1436" alt="Screenshot 2024-01-02 at 2 43 59 PM" src="https://github.com/chadhindsight/movie-contacts/assets/16522246/ceff166a-3696-4733-af0a-a02725327b55">
+
+
+https://github.com/chadhindsight/movie-contacts/assets/16522246/41142db6-2725-492e-9d04-afa4743d62d0
+
 
 ## Under the hood
 
