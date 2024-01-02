@@ -8,7 +8,7 @@ This project is an SPA that allows users to view a list of actors and their rela
 
 Users can filter the list of actors based on certain criteria such as average popularity, sort the list in alphabetical order, and add a new entry to the list of actors displayed.
 
-# Under the hood
+## Under the hood
 
 This project was built using Vite. See the following sections to learn more.
 
