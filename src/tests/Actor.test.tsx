@@ -4,7 +4,7 @@ import Actor from '../components/Actor';
 
 
 describe('Actors component', () => {
-    // Mock actor info to be passed to the realted Actor component
+    // Mock actor info to be passed to the related Actor component
     const idrisTest = {
         "name": "Idris Elba",
         "pictureUrl": "https://image.tmdb.org/t/p/w500/d9NkfCwczP0TjgrjpF94jF67SK8.jpg",
