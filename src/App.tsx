@@ -4,6 +4,7 @@ import { ContactsContext } from './main'
 import Actors from './components/Actors'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { ActorInterface } from './components/Actor'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     <>
       <Header />
       <ContactsContext.Consumer>
-        {(actors) => <Actors actors={actors} />}
+        {(actors: ActorInterface[]) => <Actors actors={actors} />}
       </ContactsContext.Consumer>
       <Footer />
     </>
